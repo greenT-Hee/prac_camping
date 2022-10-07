@@ -1,1 +1,0 @@
-const publicURL = "http://54.179.21.56:8080"
