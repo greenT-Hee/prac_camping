@@ -1,0 +1,31 @@
+.pagination {
+    display: flex;
+    background-color: #333;
+    justify-content: center;
+    align-items: center;
+}
+
+.pagination i {
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.pagination ol{
+    list-style-type: none;
+    display: flex;
+}
+
+.pagination ol li {
+    padding: 10px;
+}
+
+#numbers li a {
+    color: #fff;
+}
+
+#numbers li a.active {
+    opacity: 1;
+    background-color: #fff;
+    color: #333;
+}
