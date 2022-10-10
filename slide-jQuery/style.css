@@ -1,0 +1,64 @@
+.slideshow {
+    background: #000;
+    height: 600px;
+    min-width: 960px;
+    overflow: hidden;
+    position: relative;
+}
+
+.slides_slides {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.slides_slides a {
+    /* slides_slides의 기준으로 왼쪽으로 50% */
+    position: absolute; 
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+/* .slides_slides a img {
+    
+} */
+
+
+.slideshow_nav .prev, .slideshow_nav .next{
+    font-size: 45px;
+    position: absolute;
+    color: #fff;
+    top: 50%;
+    bottom: 50%;
+    left: 50%;
+    right: 50%;
+    text-decoration: none;
+}
+
+.slideshow_nav .prev {
+    margin-left: -480px;
+}
+
+.slideshow_nav .next {
+    margin-left: 480px;
+}
+
+.indicator{
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.indicator a {
+    text-align: center;
+    text-decoration: none;
+}
+
+/* .indicator a.active{
+    background-color: lightskyblue;
+} */
