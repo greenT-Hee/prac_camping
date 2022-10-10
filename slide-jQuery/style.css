@@ -62,3 +62,7 @@
 /* .indicator a.active{
     background-color: lightskyblue;
 } */
+
+.disabled {
+    display: none;
+}
