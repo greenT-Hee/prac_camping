@@ -108,7 +108,7 @@ function startTimer() {
     
     timer = setInterval(() => {
         //c0 n1, c1 n2,...,c3 n0
-        // (0+1)%4, ..., (3+1)%4 = 0
+        // (0+1)%4 = 1, ..., (3+1)%4 = 0
         // 슬라이드 처음으로 가게 하는 공식!!! 
         let nextIndex = ( currentIndex + 1 ) % slideCount;
         goToSlide(nextIndex)
