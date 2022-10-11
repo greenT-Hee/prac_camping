@@ -38,6 +38,7 @@ slidesArr.forEach((item, index) => {
 
 const prevBtn = document.querySelector('.prev');
 const nextBtn = document.querySelector('.next');
+const indicatorItem = document.querySelectorAll('.indicator a');
 
 // 슬라이드 이동 함수
 // .animate : ({css property, duration, easing})
@@ -45,11 +46,10 @@ function goToSlide(index) {
     // i 0 left:0% i 1 left: -100%
     slideGroup.animate({left: -100 * index + '%', duration, easing});
     currentIndex = index; 
-    displayBtns();
+    displayBtns();    
 }
 
 // 인디케이터로 이동하기 
-const indicatorItem = document.querySelectorAll('.indicator a');
 
 indicatorItem.forEach((item, index) => {
     // for(let i = 0; i < item.length; i++) {
@@ -90,5 +90,40 @@ function displayBtns() {
     }else {
         nextBtn.classList.remove('disabled');
     }
+
+    //특정요소에만 효과를 주고 싶을 떄 쓰는 유용한 공식
+    indicator.find('a').eq(currentIndex).addClass('active').siblings().removeClass('active');
+
+    // indicatorItem.forEach((item, index) => {
+    //     item.classList.add('active');
+    // })
 }
 displayBtns();
+
+
+// 자동슬라이드 함수
+function startTimer() {
+    // 일정시간마다 할일 
+    //setInterval(할일 함수, 시간), clearInterval(이름)
+    
+    timer = setInterval(() => {
+        //c0 n1, c1 n2,...,c3 n0
+        // (0+1)%4, ..., (3+1)%4 = 0
+        // 슬라이드 처음으로 가게 하는 공식!!! 
+        let nextIndex = ( currentIndex + 1 ) % slideCount;
+        goToSlide(nextIndex)
+    },interval);
+}
+startTimer();
+
+function stopTimer() {
+    clearInterval(timer);
+}
+
+container.mouseenter(() => {
+    stopTimer();
+})
+
+container.mouseleave(() => {
+    startTimer()
+})
